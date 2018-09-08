@@ -28,7 +28,9 @@ class Square:
     def calculate_next_position(self):
         self.x += self.speed_x
         self.y += self.speed_y
+        self.handle_borders_hit()
 
+    def handle_borders_hit(self):
         if self.x <= 0 or self.x + self.width >= WIN_WIDTH:
             self.speed_x = -self.speed_x
             self.color = get_random_color()
